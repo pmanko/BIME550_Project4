@@ -84,7 +84,7 @@ colnames(wpbc) <- c("ID", "outcome", "time", paste(phenotypes, types, sep = "_")
 wpbc[wpbc == "?"] <- NA
 
 # impute missing data
-wpbc[,3:35] <- apply(wpbc[,3:35], 2, function(x) as.numeric(as.character(x)))
+wpbc[,3:35] <- aprecuply(wpbc[,3:35], 2, function(x) as.numeric(as.character(x)))
 dataset_impute <- mice(wpbc[,3:35],  print = FALSE)
 wpbc <- cbind(wpbc[, 2, drop = FALSE], mice::complete(dataset_impute, 1))
 wpbc <- as.data.table(wpbc)
@@ -110,6 +110,8 @@ wpbc <- as.data.table(wpbc)
 # breast-quad: left-up, left-low, right-up, right-low, central.
 # 
 # irradiat: yes, no
+
+
 recurrance <- as.data.table(read.csv("data/datasets-uci-breast-cancer.csv", header=FALSE, quote="\'"))
 colnames(recurrance) <- c("age", "menopause", "tumor_size", "inv_nodes", "node_caps", "deg_malig", "breast", "breast_quad", 'irradiat', 'recurrance')
 
@@ -124,6 +126,8 @@ recurrance[breast_quad=='nan', breast_quad:="left_up"]
 recurrance$breast_quad <- factor(recurrance$breast_quad)
 
 recurrance$deg_malig <- factor(recurrance$deg_malig)
+
+
 
 ## BCSC
 ### Risk Estimate
