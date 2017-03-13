@@ -21,9 +21,39 @@
     
 
 
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasBMI -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasBMI"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasDistalMetastasis -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasDistalMetastasis"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasERStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasERStatus"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasFamilyHistory -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasFamilyHistory"/>
+    
+
+
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHER2Status -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHER2Status"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHistologicalGrade -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHistologicalGrade"/>
     
 
 
@@ -39,6 +69,48 @@
     
 
 
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasOverallHealth -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasOverallHealth"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPRStatus -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPRStatus"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPathologicLymphNodes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPathologicLymphNodes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPrimaryClassification -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPrimaryClassification"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasRecurrance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasRecurrance"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasRegionalLymphNodes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasRegionalLymphNodes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasStage -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasStage"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -50,9 +122,53 @@
     
 
 
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Chemotherapy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Chemotherapy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#EndocineTherapy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#EndocineTherapy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Lumpectomy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Lumpectomy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Mastectomy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Mastectomy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Outcome -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Outcome"/>
+    
+
+
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Patient -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Patient"/>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Treatment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Treatment"/>
     
 
 
