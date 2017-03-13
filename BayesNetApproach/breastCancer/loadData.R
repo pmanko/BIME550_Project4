@@ -110,8 +110,20 @@ wpbc <- as.data.table(wpbc)
 # breast-quad: left-up, left-low, right-up, right-low, central.
 # 
 # irradiat: yes, no
-recurrance <- as.data.table(read.csv("data/datasets-uci-breast-cancer.csv"), header=FALSE)
-colnames(recurrance) <- c("age", "menopause", "tumor-size", "inv-nodes", "node-caps", "deg-malig", "breast", "breast-quad", 'irradiat', 'recurrance')
+recurrance <- as.data.table(read.csv("data/datasets-uci-breast-cancer.csv", header=FALSE, quote="\'"))
+colnames(recurrance) <- c("age", "menopause", "tumor_size", "inv_nodes", "node_caps", "deg_malig", "breast", "breast_quad", 'irradiat', 'recurrance')
+
+# Fix nans manually
+recurrance[node_caps=='nan']
+recurrance[node_caps=='nan' & deg_malig == "3", node_caps:="yes"]
+recurrance[node_caps=='nan' & irradiat == "yes", node_caps:="yes"]
+recurrance[node_caps=='nan', node_caps:="no"]
+recurrance$node_caps <- factor(recurrance$node_caps)
+
+recurrance[breast_quad=='nan', breast_quad:="left_up"]
+recurrance$breast_quad <- factor(recurrance$breast_quad)
+
+recurrance$deg_malig <- factor(recurrance$deg_malig)
 
 ## BCSC
 ### Risk Estimate

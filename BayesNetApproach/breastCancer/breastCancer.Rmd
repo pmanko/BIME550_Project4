@@ -56,5 +56,32 @@ The results of putting in known info/ selecting type of treatment etc. on q of l
 
 (read more about infrerence with BN)
 
-## Possible Datasets to Use for Training:
+## Possible Datasets
+
+### Wisconsin Data
+
+There are three datasets in this group. They all contain cell nucleous features and an outcome. The first two use malignant/benign outcomes, while the 3rd has recurrance/no recurrance
+
+It might be possible to build a very simple BN with the outcomes as the variable. Could be opportunities for determining BN strucutre from data, or for making a BN where the 
+cell strucutres have some arbitrary relationship. For example, Bland Chromatin --> Mitoses, and Mitoses --> class. 
+
+For the other two datasets, you could relate areas and permiters and other things together, and make some unfounded BN
+
+### UCI Data:
+
+A possible BN could include age --> menopause, 
+
+menopause -> tumorsize/degmal
+
+inv-nodes --> node caps
+
+node-caps --> 
+
+size/degree --> inv-nodes 
+
+
+degree/size/inv-nodes/node-caps --> irradiation
+
+irradiation/size/deg/node-caps --> recurrance
+
 
