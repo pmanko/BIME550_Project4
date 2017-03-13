@@ -84,7 +84,7 @@ colnames(wpbc) <- c("ID", "outcome", "time", paste(phenotypes, types, sep = "_")
 wpbc[wpbc == "?"] <- NA
 
 # impute missing data
-wpbc[,3:35] <- aprecuply(wpbc[,3:35], 2, function(x) as.numeric(as.character(x)))
+wpbc[,3:35] <- apply(wpbc[,3:35], 2, function(x) as.numeric(as.character(x)))
 dataset_impute <- mice(wpbc[,3:35],  print = FALSE)
 wpbc <- cbind(wpbc[, 2, drop = FALSE], mice::complete(dataset_impute, 1))
 wpbc <- as.data.table(wpbc)

@@ -16,24 +16,82 @@ indeces <- sample(1:nrow(recurrance), 1000, replace = TRUE)
 sample_data <- recurrance[indeces,]
 sample_data[,index:=1:1000]
 
+## Demographics and Patient Health
 
-# age
-#sample_data[,age:=round(rnorm(1000, mean=50, sd=10))]
-# blood pressure
-sample_data[,systolic_bp:=round(rnorm(1000, mean=130, sd=10))]
-sample_data[,diastolic_bp:=systolic_bp - round(rnorm(1000, mean=40, sd=5))]
+# Family History
+c("yes", "no")
 
-# ethicity
-ethnicityL <- c("nh_white", "nh_black", "asian_pi", "native_american", "hispanic", "other")
-sample_data[,ethnicity:=sample(ethnicityL, 1000, replace=TRUE, prob=c(.4, .3, .1, .05, .1, .05))]
+# Overall Health
+c("poor", "medium", "good")
 
-# menopause
+# BMI
+c("low", "medium", "high")
 
 
-# Targets
-# recurrance
-# 
+## DIAGNOSIS
+# Histology
+# [ductal, lobular, mixed, metaplastic] [tubular, mucinous]
 
+# ER  Status
+# [+/-]
+
+
+# PR Status
+#[+/-]
+
+# HER2 Status
+#[+/-]
+
+# Genetic Recurrence Score (21-gene panel) (page 17)
+c("none", "low", "intermediate", "high")
+
+## STAGING (pages 74 - 77)
+# Primary Tumor Classification
+c("T1a", "T1b", "T1c", "T2", "T3", "T4")
+
+# Regional Lymph Nodes
+c("N0", "N1", "N2", "N3")
+
+# Pathologic Lymph Nodes
+c("pNO", "pN1", "pN2", "pN3")
+
+# Distal Metastasis
+c("M0", "M1", "M")
+
+# Stages
+c("0", "IA", "IB", "IIA", "IIB", "IIIA", "IIIB", "IIIC", "IV")
+
+# Histological Grade
+c("G1", "G2", "G3")
+
+
+## TREATMENT (page 13)
+# Masectomy
+c("none", "partial", "total")
+
+# Lumpectomy
+c("yes", "no")
+
+# Breast Reconstruction
+c("yes", "no")
+
+# Radiation therapy
+c("none", "whole_breast", "regional", "APBI")
+
+# Endocrine Therapy
+c("yes", "no")
+
+# Chemotherapy
+c("yes", "no")
+
+
+## OUTCOMES
+
+# Recurrence/remission
+c("none", "local", "regional")
+
+
+# Fertility
 
 # Bayes Network
 modelstr <- "[tumor_grade][metastasis][molecular_subtype][chemotherapy][age][tumor_size][inv_nodes][breast][menopause|age][node_caps|inv_nodes][breast_quad|breast][deg_malig|node_caps][irradiat|node_caps]
