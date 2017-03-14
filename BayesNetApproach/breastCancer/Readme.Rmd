@@ -1,0 +1,92 @@
+---
+title: "README.Rmd"
+author: "Piotr Mankowski"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Bayesian Network Representation of Breast Cancer
+
+In this short document, we present an overview of how we approached the representation of breast cancer patients, diagnosis, treatment, and outcomes. 
+
+## Breast Cancer Datasets
+Since we started with limited domain knowledge of all of the factors that contribute to breast cancer diagnosis and treatment, we decided to begin by accessing publicly-available datasets that contain information on instances of breast cancer. Fortunately, a couple of datasets exists in this field, and have been used in numerous early machine-learning approaches. Here's an overview of the datasets we are using. For references, see our paper.
+
+The datasets were loaded and cleaned in `loadData.R`.  
+
+### Wisconsin Dataset
+This dataset was gathered by Dr. WIlliam H. Wolberg at the University of Wisconsin Hospitals in Madison, Wisconsin, USA, and was donated in 1992. 
+
+It contains three files, which can be viewed by running the following code or following the links:
+
+#### Original
+https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Original%29
+```
+View(wisconsin)
+```
+#### Prognostic
+https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Prognostic%29
+```
+View(wpbc)
+```
+
+#### Diagnostic
+https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29
+```
+View(wdbc)
+```
+
+
+### Recurrance Dataset
+This dataset came from a Matjaz Zwitter & Milan Soklic at the Institute of Oncology, University Medical Centerin Ljubljana, Slovenia. 
+
+https://archive.ics.uci.edu/ml/datasets/Breast+Cancer
+
+```
+View(recurrance)
+```
+
+### BCCB Risk and Risk Factor Dataset
+These datasets contian information on mammography results gathered by the Breast Cancer Survailance Consortium from 2000 to 2009.
+
+http://www.bcsc-research.org/data/index.html
+
+```
+View(risk)
+View(risk_factor)
+```
+
+## Loading the Environment
+This project was run in RStudio under R version 3.2.2. It makes use of a Bioconductor packages that can be installed using the following code:
+
+```
+source("http://bioconductor.org/biocLite.R")
+biocLite(c("graph", "Rgraphviz", "RBGL", "pathRender"))
+```
+
+The other required packages can be installed directly from CRAN using Tools -> Install Packages...
+
+Once the packages are intalled and loaded with `library(<required package>)`, the environment file `Final.RData` can be loaded to quickly make all of the referenced data, variables, and functions available. 
+
+## Constructing Baysian Networks from Data
+We wanted to explore constructing BNs using just the obtained datasets, without preconceptions about the structure of the DAGs. 
+
+This approach is taken in `breastCancer.R`, and uses predominantly the functionality of the `bnlearn` package. 
+
+We focused on the Wisconsin data and the Recurrance data for most of the work. 
+
+Example questions and results of these questions are implemented starting around line 150 of the file, and involve both approximate and exact inference using the `bnlearn` and `rGrain` packages.
+
+## Constructing a theoretical breast cancer Bayesian Network
+We produced a DAG representing the concepts from the NCCN guidelines for breast cancer treatment (see paper for details). The `sampleData.R` file contains the work for constructing this graph. Instead of making up conditional probabilites for the arcs of this graph, we decided to create a random dataset and use it to estimate the conditional probabilities for the BN. We used the Recurrance DAG as a basis for this network. This proved to be not the best approach, since the resulting conditional probabilites did not vary much - the dataset they were based on was randomized, so the only informative sections were the ones inherited from the recurrance dataset. Given more time, we would have either created the probabilites by hand, or curated a more plausible dataset to create probabilites that had some sort of logic behind them. 
+
+Ideally, we would have loved to access a dataset or multiple datasets that have information on the variables used in our example, so that we could estimate the structure and conditional probability values of the whole graph or individual subgraphs. Such a network would be able to be queried for answers to a wide range of interesting questions. We demo such questions around line 247 of the `sampleData.R` file. 
+
+As with the constructed Bayesian networks, the infrerence examples use the `rGrain` and `bnlearn` packages, and specifically the `querygrain` and `cpquery` functions.
+
+
+
+

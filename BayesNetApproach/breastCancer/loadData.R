@@ -178,8 +178,6 @@ colnames(risk) <- c("menopaus", "agegrp", "density", "race", "Hispanic", "bmi", 
 
 risk_factor <- as.data.table(read.table("data/bcsc_rf_data/BCSC_risk_factors_summarized.csv", header = TRUE, sep=','))
 
-### Mamogram
-#(non needed)
 
 
 

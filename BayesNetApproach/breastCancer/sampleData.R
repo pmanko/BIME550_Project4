@@ -23,6 +23,9 @@
 
 library(data.table)
 library(pathRender)
+library(grid)
+library(gridExtra)
+library(bnlearn)
 
 my_s <- function(levels, probs = NULL) {
   factor(sample(levels, 1000, replace = TRUE, prob=probs))
@@ -233,15 +236,23 @@ for (j in colnames(sample_data)) set(sample_data, j = j, value = factor(sample_d
 remove_cols <- setdiff(colnames(sample_data), nodes(final_dag))
 sample_data[,(remove_cols):=NULL]
 
-final.bn.bayes1 <- bn.fit(final_dag, data=sample_data, method='bayes', iss=10)
+final.bn <- bn.fit(final_dag, data=sample_data, method='bayes', iss=2)
 
+# Arc Strengths
+as <- arc.strength(final_dag, data=sample_data, criterion = "x2")
+g <- tableGrob(as[1:15,], theme=ttheme_minimal())
+grid.newpage()
+grid.draw(g)
 
+# Inference
+cpquery(final.bn, event = (irradiat == 'yes'), evidence = (node_caps == 'yes' & overall_health == 'poor' & cancer_stage == 'IV'))
+cpquery(final.bn, event = (irradiat == 'yes'), evidence = (node_caps == 'no' & overall_health == 'poor' & cancer_stage == 'IV'))
 
+# Creates table with all observations that match the given evidence
+IxR <- cpdist(final.bn, nodes=c('irradiat', 'recurrance'),  evidence = (node_caps == 'yes' & overall_health == 'poor' & cancer_stage == 'IV'))
+head(IxR)
+# Gives overview of the frequencies in the produced table
+prop.table(table(IxNxSxO))
 
 # Visualize
 g <- graphviz.plot(final_dag, layout='neato') ; plot(g, attrs = list(graph = list(rankdir="LR"), node = list(fillcolor = "lightblue", fontsize=20)))
-
-modelstr <- "[tumor_grade][metastasis][molecular_subtype][chemotherapy][age][tumor_size][inv_nodes][breast][menopause|age][node_caps|inv_nodes][breast_quad|breast][deg_malig|node_caps][irradiat|node_caps]
-[recurrance|deg_malig]"
-
-
