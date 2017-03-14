@@ -253,6 +253,15 @@
     
 
 
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Diagnosis"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Chemotherapy -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Chemotherapy">
@@ -390,6 +399,7 @@
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M1 -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M1">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIV"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#DistantMetastasis"/>
         <rdfs:comment>Distant detectable metastases as determined by classic clinical and radiographic means and/or histologically proven larger than 0.2 mm</rdfs:comment>
     </owl:Class>
@@ -641,6 +651,215 @@
                 <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TumorSizeLessThan5mm"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Stage0 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Stage0">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M0"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N0"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Tis"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M0"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N0"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T1"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIB">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M0"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#pN1mi"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T0"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T1"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M0"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N0"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T2"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N1"/>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T0"/>
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T1"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIB">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M0"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N0"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T3"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N1"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T2"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIIA -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIIA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M0"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N1"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T3"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N2"/>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T0"/>
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T1"/>
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T2"/>
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T3"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIIB -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIIB">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M0"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T4"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N0"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N1"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N2"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIIC -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIIC">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M0"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N3"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#PrimaryTumor"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIV -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIV">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage"/>
     </owl:Class>
     
 
@@ -1150,6 +1369,20 @@ removed, or not removed for pathologic study)</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#PrimaryTumor"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#RegionalLymphNodes"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TumorSize"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Stage0"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIB"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIB"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIIA"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIIB"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIIC"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIV"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
