@@ -381,13 +381,39 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Lumpectomy">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasStage"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIB"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasDistalMetastasis"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M0"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPrimaryClassification"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T3"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasRegionalLymphNodes"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N1"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasStage"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIA"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIB"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIA"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIB"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Surgery"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Mastectomy"/>
+        <rdfs:comment>BINV-2: LOCOREGIONAL TREATMENT OF CLINICAL STAGE I, IIA, OR IIB DISEASE OR T3, N1, M0</rdfs:comment>
     </owl:Class>
     
 
@@ -671,14 +697,14 @@
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#ShouldRecommendLumpectomy -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#ShouldRecommendLumpectomy">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
-        <rdfs:subClassOf>
+        <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasStage"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIIB"/>
             </owl:Restriction>
-        </rdfs:subClassOf>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
     </owl:Class>
     
 
