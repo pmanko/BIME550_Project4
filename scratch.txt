@@ -11,3 +11,40 @@
          (pN0 or pN1))
       and (hasPrimaryClassification some
          (T1a or T1b or T2 or T3))
+
+
+
+
+
+         (
+           (hasHistology some (DuctalHistology or LobularHistology or MetaplasticHistology or MixedHistology or MucinousHistology or TubularHistology))
+          and
+           (not ((hasERStatus some HRNegative) and (hasPRStatus some HRNegative)))
+         )
+
+
+         (
+           (hasHistology some (DuctalHistology or LobularHistology or MetaplasticHistology or MixedHistology or MucinousHistology or TubularHistology))
+             and
+           ((hasERStatus some HRPositive) or (hasPRStatus some HRPositive))
+             and
+           ((hasHER2Status some HER2Positive) and (hasDistalMetastasis some (M0 or (M1 and hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm))))
+              or
+            ((hasHER2Status some HER2Negative) and (hasDistalMetastasis some M0) and ((hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm)) and hasRecurrance some (NoGeneticRecurrance or IntermediateGeneticRecurrance)))
+           )
+         )
+
+
+
+====
+
+(
+  (hasHistology some (DuctalHistology or LobularHistology or MetaplasticHistology or MixedHistology or MucinousHistology or TubularHistology))
+    and
+  ((hasERStatus some HRPositive) or (hasPRStatus some HRPositive))
+    and
+  ((hasHER2Status some HER2Positive) and (hasDistalMetastasis some (M0 or (M1 and hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm))))
+     or
+   ((hasHER2Status some HER2Negative) and (hasDistalMetastasis some M0) and ((hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm)) and hasRecurrance some (NoGeneticRecurrance or IntermediateGeneticRecurrance)))
+  )
+)
