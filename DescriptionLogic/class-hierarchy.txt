@@ -142,7 +142,6 @@ owl:Thing
 				StageIIIA
 				StageIIIB
 				StageIIIC
-				TestBasicStaging
 			M1
 			cM0Ipos
 		PathalogicLymphNode
@@ -160,7 +159,6 @@ owl:Thing
 				pN1b
 				pN1c
 				pN1mi
-					StageIB
 			pN2
 				pN2a
 				pN2b
@@ -170,7 +168,6 @@ owl:Thing
 				pN3c
 			pNX
 		PrimaryTumor
-			StageIIIC
 			T0
 			T1
 				StageIA
@@ -178,11 +175,9 @@ owl:Thing
 				T1b
 				T1c
 				T1mi
-				TestBasicStaging
 			T2
 			T3
 			T4
-				StageIIIB
 				T4a
 				T4b
 				T4c
@@ -192,12 +187,8 @@ owl:Thing
 				DCIS
 				LCIS
 				Paget
-				Stage0
 		RegionalLymphNodes
 			N0
-				Stage0
-				StageIA
-				TestBasicStaging
 			N1
 			N2
 				N2a
@@ -206,7 +197,6 @@ owl:Thing
 				N3a
 				N3b
 				N3c
-				StageIIIC
 			NX
 		TumorSize
 			TumorSizeGreaterThan10mm
