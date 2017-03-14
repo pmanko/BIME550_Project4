@@ -1394,6 +1394,20 @@
     
 
 
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestMastectomy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestMastectomy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasStage"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIV"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Tis -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Tis">
