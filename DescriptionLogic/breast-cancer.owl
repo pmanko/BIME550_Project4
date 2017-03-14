@@ -21,6 +21,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasAxillaryNodes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasAxillaryNodes"/>
+    
+
+
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasBMI -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasBMI"/>
@@ -936,6 +942,28 @@
     
 
 
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#ShouldRecommendLumpectomyWithWholeBreastRadiation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#ShouldRecommendLumpectomyWithWholeBreastRadiation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasAxillaryNodes"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GreaterThan4AxillaryNodes"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasRegionalLymphNodes"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#N1"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Stage0 -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Stage0">
@@ -1390,6 +1418,12 @@
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#WholeBreastRadiationTherapy -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#WholeBreastRadiationTherapy">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasAxillaryNodes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GreaterThan4AxillaryNodes"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#RadiationTherapy"/>
     </owl:Class>
     
@@ -1647,16 +1681,6 @@ removed, or not removed for pathologic study)</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GeneticRecurranceScore"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HistologicalGrade"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Chemotherapy"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#EndocrineTherapy"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#RadiationTherapy"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Surgery"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Trastuzumab"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
