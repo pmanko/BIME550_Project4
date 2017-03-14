@@ -253,6 +253,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#AxillaryNodes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#AxillaryNodes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Diagnosis"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#BMI -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#BMI">
@@ -369,6 +377,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GoodOverallHealth">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#OverallHealth"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GreaterThan4AxillaryNodes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GreaterThan4AxillaryNodes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#AxillaryNodes"/>
     </owl:Class>
     
 
@@ -690,6 +706,14 @@
     
 
 
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#NegativeAxillaryNodes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#NegativeAxillaryNodes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#AxillaryNodes"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#NoFamilyHistoryOfBreastCancer -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#NoFamilyHistoryOfBreastCancer">
@@ -711,6 +735,14 @@
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#NoPatientDesireToKeepBreast">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#PatientDesire"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#PatientDesireToKeepBreast"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#OneToThreeAxillaryNodes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#OneToThreeAxillaryNodes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#AxillaryNodes"/>
     </owl:Class>
     
 
@@ -1591,6 +1623,17 @@ removed, or not removed for pathologic study)</rdfs:comment>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#AxillaryNodes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CancerStage"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GeneticRecurranceScore"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HistologicalGrade"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Histology"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#BMI"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#FamilyHistory"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#OverallHealth"/>
@@ -1649,6 +1692,14 @@ removed, or not removed for pathologic study)</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GoodOverallHealth"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#MediumOverallHealth"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#PoorOverallHealth"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GreaterThan4AxillaryNodes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#NegativeAxillaryNodes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#OneToThreeAxillaryNodes"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
