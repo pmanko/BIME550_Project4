@@ -1,0 +1,13 @@
+(hasERStatus some
+    (HRNegative
+     and (hasPRStatus some HRPositive))) or (hasERStatus some
+    (HRPositive
+     and (hasPRStatus some HRNegative))) or (hasERStatus some
+    (HRPositive
+     and (hasPRStatus some HRPositive)))
+
+
+     (hasPathologicLymphNodes some
+         (pN0 or pN1))
+      and (hasPrimaryClassification some
+         (T1a or T1b or T2 or T3))

@@ -162,98 +162,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#AdjuvantEndocrineWithOrWithoutChemoWithTrastuzumab -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#AdjuvantEndocrineWithOrWithoutChemoWithTrastuzumab">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPathologicLymphNodes"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#pN0"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#pN1"/>
-                                </owl:unionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPrimaryClassification"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:unionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T1a"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T1b"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T2"/>
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T3"/>
-                                </owl:unionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasERStatus"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRNegative"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPRStatus"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRPositive"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasERStatus"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRPositive"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPRStatus"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRNegative"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasERStatus"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRPositive"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPRStatus"/>
-                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRPositive"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasTumorSize"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TumorSizeLessThan5mm"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Treatment"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Anxiety -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Anxiety">
@@ -376,26 +284,36 @@
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#EndocrineTherapy -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#EndocrineTherapy">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasERStatus"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRPositive"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHistology"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#DuctalHistology"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#LobularHistology"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#MetaplasticHistology"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#MixedHistology"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#MucinousHistology"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TubularHistology"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPRStatus"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRPositive"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#Treatment"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHER2Status"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HER2Positive"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHistology"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#DuctalHistology"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPathologicLymphNodes"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#pN0"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1668,6 +1586,20 @@
     
 
 
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestLumpectomyPreop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestLumpectomyPreop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPreopTherapyResponse"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#CompletePreopResponse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestLumpectomyWithAPBIRadiation -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestLumpectomyWithAPBIRadiation">
@@ -1739,6 +1671,181 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasStage"/>
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIV"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestMastectomyOrLumpectomyPreop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestMastectomyOrLumpectomyPreop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPreopTherapyResponse"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#PartialPreopReponse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestMastectomyOrLumpectomyWithRegionalRadiation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestMastectomyOrLumpectomyWithRegionalRadiation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasAxillaryNodes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GreaterThan4AxillaryNodes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPreopTherapyResponse"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#PartialPreopReponse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestMastectomyPreop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestMastectomyPreop">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPreopTherapyResponse"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#ConfirmedProgressivePreopResponse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestMastectomyWithWholeBreastRadiation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestMastectomyWithWholeBreastRadiation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasAxillaryNodes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GreaterThan4AxillaryNodes"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasStage"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#StageIV"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestNotEndocrineTherapy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestNotEndocrineTherapy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasERStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRNegative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHER2Status"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HER2Positive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHistology"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#DuctalHistology"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPRStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRNegative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPathologicLymphNodes"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#pN0"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPrimaryClassification"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#T1a"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasTumorSize"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TumorSizeLessThan5mm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestNotEndocrineTherapy2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestNotEndocrineTherapy2">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TestDiagnoses"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasDistalMetastasis"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#M0"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasERStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRPositive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHER2Status"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HER2Positive"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasHistology"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#DuctalHistology"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasPRStatus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#HRNegative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasTumorSize"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#TumorSizeGreaterThan5mmLessThan10mm"/>
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
@@ -1836,8 +1943,7 @@
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#hasAxillaryNodes"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GreaterThan4AxillaryNodes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#GreaterThan4AxillaryNodes"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/psbrandt/ontologies/2017/2/untitled-ontology-22#RadiationTherapy"/>
