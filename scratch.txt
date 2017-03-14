@@ -43,8 +43,33 @@
     and
   ((hasERStatus some HRPositive) or (hasPRStatus some HRPositive))
     and
-  ((hasHER2Status some HER2Positive) and (hasDistalMetastasis some (M0 or (M1 and hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm))))
+  ((hasHER2Status some HER2Positive) and (hasDistalMetastasis some (M1 or (M0 and hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm))))
      or
    ((hasHER2Status some HER2Negative) and (hasDistalMetastasis some M0) and ((hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm)) and hasRecurrance some (NoGeneticRecurrance or IntermediateGeneticRecurrance)))
+  )
+)
+
+
+(
+  (hasHistology some (DuctalHistology or LobularHistology or MetaplasticHistology or MixedHistology or MucinousHistology or TubularHistology))
+    and
+  ((hasERStatus some HRPositive) or (hasPRStatus some HRPositive))
+    and
+  (((hasHER2Status some HER2Positive) and (hasDistalMetastasis some (M1 or (M0 and hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm)))))
+     or
+   ((hasHER2Status some HER2Negative) and (hasDistalMetastasis some M0) and ((hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm)) and (hasRecurrance some (NoGeneticRecurrance or IntermediateGeneticRecurrance))))
+  )
+)
+
+
+
+(
+  (hasHistology some (DuctalHistology or LobularHistology or MetaplasticHistology or MixedHistology or MucinousHistology or TubularHistology))
+    and
+  ((hasERStatus some HRPositive) or (hasPRStatus some HRPositive))
+    and
+  ((hasDistalMetastasis some M1) or ((hasDistalMetastasis some M0) and (hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm)))
+     or
+   ((hasHER2Status some HER2Negative) and (hasDistalMetastasis some M0) and ((hasPrimaryClassification some (TumorSizeGreaterThan5mmLessThan10mm or TumorSizeGreaterThan10mm)) and (hasRecurrance some (NoGeneticRecurrance or IntermediateGeneticRecurrance))))
   )
 )
