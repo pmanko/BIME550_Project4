@@ -1,5 +1,5 @@
-# source("http://bioconductor.org/biocLite.R")
-# biocLite(c("graph", "Rgraphviz", "RBGL"))
+source("http://bioconductor.org/biocLite.R")
+biocLite(c("graph", "Rgraphviz", "RBGL"))
 # install.packages("gRain", 'bnlearn')
 
 library(bnlearn)
