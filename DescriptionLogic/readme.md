@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `breast-cancel.owl` file contains the ontology that models the domain of
+The [`breast-cancer.owl`](breast-cancer.owl) file contains the ontology that models the domain of
 breast cancer and uses restriction classes to classify example diagnoses into
 treatment categories. The file was generated using Protégé 5.1.0 and tested using
 the HermiT reasoner.
@@ -58,5 +58,5 @@ An example of our simplified restriction class logic is:
 
 To test the restriction classes, load the file into Protégé and run the
 reasoner. Then, navigate to the `Diagnosis > TestDiagnoses` parent class and
-browse though its children. In each case there should be one or more
+browse through its children. In each case there should be one or more
 inferred subclasses that match the name of the test diagnosis.
