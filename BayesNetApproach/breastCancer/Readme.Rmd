@@ -4,6 +4,8 @@ author: "Piotr Mankowski"
 output: html_document
 ---
 
+*Available in a formatted version at https://github.com/pmanko/BIME550_Project4.*
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
