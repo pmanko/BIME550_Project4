@@ -58,5 +58,5 @@ An example of our simplified restriction class logic is:
 
 To test the restriction classes, load the file into Protégé and run the
 reasoner. Then, navigate to the `Diagnosis > TestDiagnoses` parent class and
-browse though its children. In each case there should be one or more
+browse through its children. In each case there should be one or more
 inferred subclasses that match the name of the test diagnosis.
