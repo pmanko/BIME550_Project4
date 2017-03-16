@@ -37,7 +37,9 @@
   <aside class="notes">
     • Most common cancer around the world<br/>
     • 1.1M cases diagnosed annually<br/>
-    • 410k women die each year
+    • 410k women die each year<br/>
+    • At least two people during this presentation<br/>
+    • Affects men too, but far fewer, se we focused on females<br/>
   </aside>
 </section>
 
@@ -61,8 +63,15 @@
     </li>
   </ul>
   <aside class="notes">
-    • Cancer is caused by an accumulation of mutations in the cells that cause them to proliferate, de-differentation and begin invading other parts of the body</br>
-    • Usually surgery, where the first decision comes in, sometimes preop systemtime, then followup<br/>
+    • Cancer is caused by an accumulation of mutations in the cells that cause them to<br/>
+        - proliferate, de-differentation and begin invading other parts of the body</br>
+    • Almost always surgery, where the first decision comes in<br/>
+        - sometimes preop systemtime<br/>
+        - then followup<br/>
+           * which is one or more of<br/>
+              • chemo<br/>
+              • endocine (hormone)<br/>
+              • radiation
   </aside>
 </section>
 
@@ -84,7 +93,8 @@
     <h5>Decision Tree</h5>
     <img src="images/binv-4.png" width="80%" />
     <aside class="notes">
-      • Test Notes 2
+      • Here we see paths taken dependent on hormone response<br/>
+      • and growth-promoting protein resposne<br/>
     </aside>
   </section>
 
@@ -92,7 +102,10 @@
     <h5>Decision Tree</h5>
     <img src="images/binv-6.png" width="80%" />
     <aside class="notes">
-      • Test Notes 3
+      • Here we see branching based on:<br/>
+         - Mestastasis,<br/>
+         - Tumor size and,<br/>
+         - Genetic recurrance score<br/>
     </aside>
   </section>
 </section>
@@ -108,12 +121,22 @@
       </ul>
     </li>
   <ul>
+    <aside class="notes">
+  • We wanted to ask these basic questions of our KR:<br/>
+     - Which type of surgery should the patient get, and<br/>
+     - What should the treatment be after surgery<br/>
+</aside>
 </section>
 
 <section>
   <h5>Simplified Surgery Factors</h5>
   <br/>
   <img style="border: 0px; box-shadow: none;" src="images/surgery-factors.svg" width="80%" />
+  <aside class="notes">
+  • For surgery, we consider two ways of making the decision<br/>
+     - Using cancer stage, which we implemented similart to project 3, and<br/>
+     - Response to preoperative therapy<br/>
+</aside>
 </section>
 
 <!-- Description logic stuff -->
@@ -136,12 +159,25 @@
   hasStage some
       (StageIIA or StageIIB or StageIIIB or StageIIIC or StageIV)
   </code></pre>
+  <aside class="notes">
+  • Ran into first limitation of DLs<br/>
+     - Mutiple seemingly conflicting recommendations can be made at the same time<br/>
+     - Because the rule isn't hard and fast<br/>
+     - Here we see:<br/>
+         * if partial response to preop theraby<br/>
+         * or we the patient has Stage II cancer<br/>
+         * Either option is valid<br/>
+     - We worked this be not making the Lumpectomy and Mastectomy class disjoint.<br/>
+</aside>
 </section>
 
 <section>
   <h5>Simplified Postop Factors</h5>
   <br/>
   <img style="border: 0px; box-shadow: none;" src="images/therapy-factors.svg" width="80%" />
+  <aside class="notes">
+  • Seven simplified factors in our postop decision tree<br/>
+</aside>
 </section>
 
 <section>
@@ -160,7 +196,8 @@
       WholeBreastRadiationTherapy
   </code></pre>
   <aside class="notes">
-    Not the heuristic for modeling the temporal dimension.
+    - Ran into another limitation with temportal dimension<br/>
+    - Note the heuristic for modeling the temporal dimension.<br/>
   </aside>
 </section>
 
