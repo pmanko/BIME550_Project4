@@ -45,61 +45,139 @@
         </aside>
       </section>
 
-      <!-- Decision Trees -->
-
-      <section>
-        <h5>Decision Tree</h5>
-        <img src="images/binv-2.png" width="80%" />
-      </section>
-
-      <section>
-        <h5>Decision Tree</h5>
-        <img src="images/binv-4.png" width="80%" />
-      </section>
-
-      <section>
-        <h5>Decision Tree</h5>
-        <img src="images/binv-6.png" width="80%" />
-      </section>
-
-      <!-- Description logic stuff -->
-
-      <section>
-        <h5>Multiple Surgery Recommendations</h5>
-
-        Lumpectomy
-        <pre><code data-trim>
-          hasPreopTherapyResponse some
-            (CompletePreopResponse or PartialPreopReponse)
-          hasStage some
-            (Stage0 or StageIA or StageIB or StageIIA or StageIIB)
-        </code></pre>
-
-        Mastectomy
-        <pre><code data-trim>
-        hasPreopTherapyResponse some
-            (ConfirmedProgressivePreopResponse or PartialPreopReponse)
-        hasStage some
-            (StageIIA or StageIIB or StageIIIB or StageIIIC or StageIV)
-        </code></pre>
-      </section>
-
-      <section>
-        <h5>Decision Tree</h5>
-        <img src="images/binv-6.png" width="80%" />
-
-      </section>
-
       <!-- Bayesian network stuff -->
 
       <section>
-        <h5>Bayesian Network</h5>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif" style="float: right"/>
-        <ul>
-          <li>Bayes yo</li>
-          <li>...</li>
+
+        <h5 style=''>Bayesian Networks</h5>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Diagram_of_a_Markov_blanket.svg" style="float:right; width:20%" class='plain'/>
+        <ul style='float:left; width:75%'>
+          <li>Model the world using <b>graph theory</b> and <b>probability theory</b></li>
+          <li>Represented by <b>D</b>irected <b>A</b>cyclic <b>G</b>raphs (<b>DAGs</b>)</li>
+          <li>Nodes <b>"explained"</b> by neighbors</li>
+          <li>Efficient algorithms for <b>learning</b> and <b>inference</b>
         </ul>
+        <aside class="notes">
+          • Bayesian Networks attempt to model some aspect of the world using graph theory and probability theory
+          • All the nodes in a connected BN are conditionally related, but the ideas of Markov Blankets and D-seperation allow for assumptions of conditional independence
+          • These assumptions reduce the amount of conditional probs that need to be calculated
+          • Bayes Nets have efficient algs for learning structure, estimating probabilites based on data, and querying --> inference
+          • We did not know much about Breast Cancer, so decided to build BNs ground-up, based on publicly available datasets.
+
+        </aside>
       </section>
+
+      <section>
+        <h3>Breast Cancer Data</h3>
+
+        <div style='text-align:left'>
+          <b>UCI Machine Learning Repository</b>
+          <br />
+          <a href='https://archive.ics.uci.edu/ml/datasets.html'>https://archive.ics.uci.edu/ml/datasets.html</a>
+          <ul>
+            <li>University of Wisconsin Hospitals Datasets</li>
+            <li>Institute of Oncology Ljubljana Dataset</li>
+          </ul>
+          <br />
+          <br />
+          <b style='text-align:left'>Breast Cancer Surveilance Consortium</b>
+          <br />
+          <a href='http://www.bcsc-research.org/data/index.html'>http://www.bcsc-research.org/data/index.html</a>
+          <ul>
+            <li>Data from <b>> 2 million</b> screening mammograms</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          • We looked for publicly-available breast cancer datasets
+          • We downloaded and analyzed six in total
+           - Four from UCI Machine Learning Repo - under 500 rows
+            * uni of wisconsin: cell histology, risk factors, and outcomes
+            * institute of oncology ljubljana: diagnostic info and recurrance
+           - Two from BCSC - very large datasets
+            * data from more than two million screening mammograms
+        </aside>
+      </section>
+
+      <section>
+        <h3>Step #1: Learn The Structure</h3>
+        <section>
+          <h5>BCSC Risk Dataset</h5>
+          <img data-src="images/risk_dag.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h5>BCSC Risk Factor Dataset</h5>
+          <img data-src="images/risk_factor_dag.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h5>Wisconsin Prognostic Dataset</h5>
+          <img data-src="images/wpbc_dag.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h5>Wisconsin Diagnostic Dataset</h5>
+          <img data-src="images/wdbc_dag.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h5>*Wisonsin Original Dataset*</h5>
+          <img data-src="images/wisconsin_dag.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h5>*Ljubljana Recurrance Dataset*</h5>
+          <img data-src="images/recurrance_dag.png" class='plain' height=400/>
+        </section>
+        <aside class="notes">
+          • We used bnlearn package in R (and related packages) for most BN work
+          • 1st step: Learn Structure
+            - Used hill climbing and tabu algorithms that evaluate network score based on information theory to search through space of possible structures
+          • Quickly show results
+          • We focused our subsequent analysis on the last two
+
+        </aside>
+      </section>
+
+      <section>
+        <h3>Step #2: Estimate Conditional Probabilites</h3>
+        <img data-src="images/Wisconsin_ConditionalPGraph.png" class='plain' height=500/>
+
+        <aside class="notes">
+          • Using the structures and the datasets, we estimated the conditional probabilites
+          • bnlearn library
+          • General method:
+            - Maximum Likelihood Parameter Estimation - maximizes agreement of a given model with observed data
+
+        </aside>
+      </section>
+
+      <section data-background-image='Images/'>
+        <h3>Breast Cancer Data</h3>
+
+        <div style='text-align:left'>
+          <b>UCI Machine Learning Repository</b>
+          <br />
+          <a href='https://archive.ics.uci.edu/ml/datasets.html'>https://archive.ics.uci.edu/ml/datasets.html</a>
+          <ul>
+            <li>University of Wisconsin Hospitals Datasets</li>
+            <li>Institute of Oncology Ljubljana Dataset</li>
+          </ul>
+          <br />
+          <br />
+          <b style='text-align:left'>Breast Cancer Surveilance Consortium</b>
+          <br />
+          <a href='http://www.bcsc-research.org/data/index.html'>http://www.bcsc-research.org/data/index.html</a>
+          <ul>
+            <li>Data from <b>> 2 million</b> screening mammograms</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          • We looked for publicly-available breast cancer datasets
+          • We downloaded and analyzed six in total
+           - Four from UCI Machine Learning Repo - under 500 rows
+            * uni of wisconsin: cell histology, risk factors, and outcomes
+            * institute of oncology ljubljana: diagnostic info and recurrance
+           - Two from BCSC - very large datasets
+            * data from more than two million screening mammograms
+        </aside>
+      </section>
+
 
       <!-- Discussion (compare/contrast) -->
 
@@ -140,6 +218,9 @@
     // More info https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
       history: true,
+
+      width: 960,
+      height: 700,
 
       // More info https://github.com/hakimel/reveal.js#dependencies
       dependencies: [{

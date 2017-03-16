@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Lung Cancer Bayes Net Notes\"\nauthor: \"Piotr Mankowski\"\ndate: \"March 10, 2017\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n# General Ideas about use of BN\nWe want to represent the diagnosis and treatment knowledgebase as a BN\n\nFor a given patient, we will have given diagnostic information, demographic information, tumor genotype information, etc.\n\n## Medical Diagnosis\n- primary tumor size\n- primary tumor location\n- invasive properties\n\n## Tumor Genetics and Biomarkers\n- genetic subtype\n- presence of different cell surface receptors\n- expression info from stroma (classified --> outcome?)\n\n\n## Metastasis Info (how to model multiple metastatic locations?)\n- # of metastasis\n- location\n- size?\n\n## Patient Demographics\n- age\n- sex\n- ethnicity\n- height\n- weight\n\n## Patient Health Metrics\n- Blood pressure + other vital signs\n- Overall health assessment?\n\n## Treatment Options\n- Chemo\n- Surgical\n- Radiology\n- other?\n\n## Outcome Variables\n- Quality of Life\n- Prognosis (remission vs. recurrance)\n\n\nThe results of putting in known info/ selecting type of treatment etc. on q of life and prognosis could be informative for decision-making.\n\n(read more about infrerence with BN)\n\n## Possible Datasets to Use for Training:\n\n",
+    "created" : 1489342451566.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "41163279",
+    "id" : "96ACF692",
+    "lastKnownWriteTime" : 1489353317,
+    "last_content_update" : 1489353318092,
+    "path" : "C:/Users/piotr/Google Drive/BIME 550/Project4/code/BayesNetApproach/breastCancer/breastCancer.Rmd",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
