@@ -136,7 +136,7 @@
 
       <section>
         <h3>Step #2: Estimate Conditional Probabilites</h3>
-        <img data-src="images/Wisconsin_ConditionalPGraph.png" class='plain' height=500/>
+        <img data-src="images/conditional_prob_table.png" class='plain' height=500/>
 
         <aside class="notes">
           • Using the structures and the datasets, we estimated the conditional probabilites
@@ -147,34 +147,47 @@
         </aside>
       </section>
 
-      <section data-background-image='Images/'>
-        <h3>Breast Cancer Data</h3>
+      <section>
+        <h3>Step #3: Ask Questions!</h3>
+        <section>
+          <h5></h5>
+          <img data-src="images/inference_wisconsin.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h5></h5>
+          <img data-src="images/Wisconsin_ConditionalPGraph.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h5></h5>
+          <img data-src="images/wisconsin_inference_code.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h5></h5>
+          <img data-src="images/approx_inference.png" class='plain' height=200/>
+        </section>
 
-        <div style='text-align:left'>
-          <b>UCI Machine Learning Repository</b>
-          <br />
-          <a href='https://archive.ics.uci.edu/ml/datasets.html'>https://archive.ics.uci.edu/ml/datasets.html</a>
-          <ul>
-            <li>University of Wisconsin Hospitals Datasets</li>
-            <li>Institute of Oncology Ljubljana Dataset</li>
-          </ul>
-          <br />
-          <br />
-          <b style='text-align:left'>Breast Cancer Surveilance Consortium</b>
-          <br />
-          <a href='http://www.bcsc-research.org/data/index.html'>http://www.bcsc-research.org/data/index.html</a>
-          <ul>
-            <li>Data from <b>> 2 million</b> screening mammograms</li>
-          </ul>
-        </div>
         <aside class="notes">
-          • We looked for publicly-available breast cancer datasets
-          • We downloaded and analyzed six in total
-           - Four from UCI Machine Learning Repo - under 500 rows
-            * uni of wisconsin: cell histology, risk factors, and outcomes
-            * institute of oncology ljubljana: diagnostic info and recurrance
-           - Two from BCSC - very large datasets
-            * data from more than two million screening mammograms
+          • With the BNs built, we can provide evidence and determine how the evidece affects the probability distributions
+        </aside>
+      </section>
+
+      <section data-background-image='Images/'>
+        <h4>Step #4: Create Full-size Network</h4>
+
+        <section>
+          <img data-src="images/final_dag.png" class='plain' height=550/>
+        </section>
+        <section>
+          <p>Random data results in poor edge strength =(</p>
+          <img data-src="images/final_dag_strength.png" class='plain' height=350/>
+        </section>
+        <section>
+          <p>Q: How does the probability of Radiation Therapy change for high stage, poor health individuals based on Lymph Node Capsule invasion?</p>
+          <img data-src="images/final_inference.png" class='plain' height=350/>
+        </section>
+
+        <aside class="notes">
+          • To show how
         </aside>
       </section>
 
