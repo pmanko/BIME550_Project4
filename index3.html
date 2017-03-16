@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/white.css">
+  <link rel="stylesheet" href="css/bime550.css">
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <title>BIME 550: Knowlege Representation</title>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title -->
+
+      <section data-background="images/title.png">
+        <h2>Breast Cancer Risks, Treatment &amp; Outcome Modeling</h2>
+        <br/><br/>
+        <h4>Description Logic &amp; Bayesian Networks</h4>
+        <br/><br/><br/>
+        <h5>Piotr Mankowski &amp; Pascal Brandt</h5>
+        <aside class="notes">
+          Use the aside tag for speaker notes.
+        </aside>
+      </section>
+
+      <!-- Breast cancer stats/important/rationale -->
+<section>
+  <h5>Rationale</h5>
+  <img src="http://patients.ambrygen.com/bundles/agpat/img/breast_cancer/How%20common%20is%20breast%20cancer-01.png" width="80%"/>
+  <aside class="notes">
+    • Most common cancer around the world<br/>
+    • 1.1M cases diagnosed annually<br/>
+    • 410k women die each year<br/>
+    • At least two people during this presentation<br/>
+    • Affects men too, but far fewer, se we focused on females<br/>
+  </aside>
+</section>
+
+<section>
+  <h5>Breast Cancer Overview</h5>
+  <ul>
+    <li>
+      Cause 💀
+      <ul style="list-style: circle">
+        <li>Cell Mutations</li>
+      </ul>
+    </li>
+    <li>
+      Treatment 💊
+      <ul style="list-style: circle">
+        <li>Surgery</li>
+        <li>Chemo</li>
+        <li>Endocrine</li>
+        <li>Radiation</li>
+      </ul>
+    </li>
+  </ul>
+  <aside class="notes">
+    • Cancer is caused by an accumulation of mutations in the cells that cause them to<br/>
+        - proliferate, de-differentation and begin invading other parts of the body</br>
+    • Almost always surgery, where the first decision comes in<br/>
+        - sometimes preop systemtime<br/>
+        - then followup<br/>
+           * which is one or more of<br/>
+              • chemo<br/>
+              • endocine (hormone)<br/>
+              • radiation
+  </aside>
+</section>
+
+<!-- Decision Trees -->
+
+<section>
+  <section>
+    <h5>Decision Tree</h5>
+    <img src="images/binv-2.png" width="80%" />
+    <aside class="notes">
+      • Shows the decision following a lumpectomy<br/>
+      • based on side of tumor in axillary (armpit) lymph node<br/>
+      • deciding on type of radiation, whole or partial<br/>
+      • example of simultaneous recommendation
+    </aside>
+  </section>
+
+  <section>
+    <h5>Decision Tree</h5>
+    <img src="images/binv-4.png" width="80%" />
+    <aside class="notes">
+      • Here we see paths taken dependent on hormone response<br/>
+      • and growth-promoting protein resposne<br/>
+    </aside>
+  </section>
+
+  <section>
+    <h5>Decision Tree</h5>
+    <img src="images/binv-6.png" width="80%" />
+    <aside class="notes">
+      • Here we see branching based on:<br/>
+         - Mestastasis,<br/>
+         - Tumor size and,<br/>
+         - Genetic recurrance score<br/>
+    </aside>
+  </section>
+</section>
+
+<section>
+  <h5>Description Logic</h5>
+  <ul>
+    <li>
+      Competancy Questions
+      <ul style="list-style: circle">
+        <li>Surgery Type</li>
+        <li>Postop Therapy</li>
+      </ul>
+    </li>
+  <ul>
+  <aside class="notes">
+    • We wanted to ask these basic questions of our KR:<br/>
+       - Which type of surgery should the patient get, and<br/>
+       - What should the treatment be after surgery<br/>
+  </aside>
+</section>
+
+<section>
+  <h5>Simplified Surgery Factors</h5>
+  <br/>
+  <img style="border: 0px; box-shadow: none;" src="images/surgery-factors.svg" width="80%" />
+  <aside class="notes">
+    • For surgery, we consider two ways of making the decision<br/>
+       - Using cancer stage, which we implemented similart to project 3, and<br/>
+       - Response to preoperative therapy<br/>
+  </aside>
+</section>
+
+<!-- Description logic stuff -->
+
+<section>
+  <h5>Multiple Surgery Recommendations</h5>
+
+  Lumpectomy
+  <pre><code data-trim>
+    hasPreopTherapyResponse some
+      (CompletePreopResponse or PartialPreopReponse)
+    hasStage some
+      (Stage0 or StageIA or StageIB or StageIIA or StageIIB)
+  </code></pre>
+
+  Mastectomy
+  <pre><code data-trim>
+  hasPreopTherapyResponse some
+      (ConfirmedProgressivePreopResponse or PartialPreopReponse)
+  hasStage some
+      (StageIIA or StageIIB or StageIIIB or StageIIIC or StageIV)
+  </code></pre>
+  <aside class="notes">
+    • Ran into first limitation of DLs<br/>
+       - Mutiple seemingly conflicting recommendations can be made at the same time<br/>
+       - Because the rule isn't hard and fast<br/>
+       - Here we see:<br/>
+           * if partial response to preop theraby<br/>
+           * or we the patient has Stage II cancer<br/>
+           * Either option is valid<br/>
+       - We worked this be not making the Lumpectomy and Mastectomy class disjoint.<br/>
+  </aside>
+</section>
+
+<section>
+  <h5>Simplified Postop Factors</h5>
+  <br/>
+  <img style="border: 0px; box-shadow: none;" src="images/therapy-factors.svg" width="80%" />
+  <aside class="notes">
+    • Seven simplified factors in our postop decision tree<br/>
+  </aside>
+</section>
+
+<section>
+  <h5>Treatments</h5>
+
+  <pre><code data-trim>
+    Chemotherapy
+      ChemotherapyFollowedByEndocrineTherapy
+      StandaloneChemotherapy
+    EndocrineTherapy
+      EndocrineTherapyFollowedByChemotherapy
+    NoAdjuvantTherapy
+    RadiationTherapy
+      APBIRadiationTherapy
+      RegionalRadiationTherapy
+      WholeBreastRadiationTherapy
+  </code></pre>
+  <aside class="notes">
+    - Ran into another limitation with temportal dimension<br/>
+    - Note the heuristic for modeling the temporal dimension.<br/>
+  </aside>
+</section>
+
+
+      <!-- Bayesian network stuff -->
+
+      <section>
+
+        <h5 style=''>Bayesian Networks</h5>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Diagram_of_a_Markov_blanket.svg" style="float:right; width:20%" class='plain'/>
+        <ul style='float:left; width:75%'>
+          <li>Model the world using <b>graph theory</b> and <b>probability theory</b></li>
+          <li>Represented by <b>D</b>irected <b>A</b>cyclic <b>G</b>raphs (<b>DAGs</b>)</li>
+          <li>Nodes <b>"explained"</b> by neighbors</li>
+          <li>Efficient algorithms for <b>learning</b> and <b>inference</b>
+        </ul>
+        <aside class="notes">
+          • Bayesian Networks attempt to model some aspect of the world using graph theory and probability theory<br \>
+          • All the nodes in a connected BN are conditionally related, but the ideas of Markov Blankets and D-seperation allow for assumptions of conditional independence<br \>
+          • These assumptions reduce the amount of conditional probs that need to be calculated<br \>
+          • Bayes Nets have efficient algs for learning structure, estimating probabilites based on data, and querying --> inference<br \>
+          • We did not know much about Breast Cancer, so decided to build BNs ground-up, based on publicly available datasets.<br \>
+
+        </aside>
+      </section>
+
+      <section>
+        <h3>Breast Cancer Data</h3>
+
+        <div style='text-align:left'>
+          <b>UCI Machine Learning Repository</b>
+          <br />
+          <a href='https://archive.ics.uci.edu/ml/datasets.html'>https://archive.ics.uci.edu/ml/datasets.html</a>
+          <ul>
+            <li>University of Wisconsin Hospitals Datasets</li>
+            <li>Institute of Oncology Ljubljana Dataset</li>
+          </ul>
+          <br />
+          <br />
+          <b style='text-align:left'>Breast Cancer Surveilance Consortium</b>
+          <br />
+          <a href='http://www.bcsc-research.org/data/index.html'>http://www.bcsc-research.org/data/index.html</a>
+          <ul>
+            <li>Data from <b>> 2 million</b> screening mammograms</li>
+          </ul>
+        </div>
+        <aside class="notes">
+          • We looked for publicly-available breast cancer datasets <br \>
+          • We downloaded and analyzed six in total<br \>
+           - Four from UCI Machine Learning Repo - under 500 rows<br \>
+            * uni of wisconsin: cell histology, risk factors, and outcomes<br \>
+            * institute of oncology ljubljana: diagnostic info and recurrance<br \>
+           - Two from BCSC - very large datasets<br \>
+            * data from more than two million screening mammograms<br \>
+        </aside>
+      </section>
+
+      <section>
+        <section>
+          <h3>Step #1: Learn The Structure</h3>
+          <aside class="notes">
+            • We used bnlearn package in R (and related packages) for most BN work <br/>
+            • 1st step: Learn Structure<br/>
+              - Used hill climbing and tabu algorithms that evaluate network score based on information theory to search through space of possible structures<br/>
+            • Quickly show results<br/>
+            • We focused our subsequent analysis on the last two<br/>
+          </aside>
+        </section>
+        <section>
+          <h3>Step #1: Learn The Structure</h3>
+          <h5>BCSC Risk Dataset</h5>
+          <img data-src="images/risk_dag.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h3>Step #1: Learn The Structure</h3>
+          <h5>BCSC Risk Factor Dataset</h5>
+          <img data-src="images/risk_factor_dag.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h3>Step #1: Learn The Structure</h3>
+          <h5>Wisconsin Prognostic Dataset</h5>
+          <img data-src="images/wpbc_dag.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h3>Step #1: Learn The Structure</h3>
+          <h5>Wisconsin Diagnostic Dataset</h5>
+          <img data-src="images/wdbc_dag.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h3>Step #1: Learn The Structure</h3>
+          <h5>*Wisonsin Original Dataset*</h5>
+          <img data-src="images/wisconsin_dag.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h3>Step #1: Learn The Structure</h3>
+          <h5>*Ljubljana Recurrance Dataset*</h5>
+          <img data-src="images/recurrance_dag.png" class='plain' height=400/>
+        </section>
+      </section>
+
+      <section>
+        <h3>Step #2: Estimate Conditional Probabilites</h3>
+        <img data-src="images/conditional_prob_table.png" class='plain' height=500/>
+
+        <aside class="notes">
+          • Using the structures and the datasets, we estimated the conditional probabilites<br \>
+          • bnlearn library<br \>
+          • General method:<br \>
+            - Maximum Likelihood Parameter Estimation - maximizes agreement of a given model with observed data<br \>
+
+        </aside>
+      </section>
+
+      <section>
+        <section>
+          <h3>Step #3: Ask Questions!</h3>
+          <img data-src="images/wisconsin_inference_code.png" class='plain' height=400/>
+          <aside class="notes">
+            • With the BNs built, we can provide evidence and determine how the evidece affects the probability distributions
+          </aside>
+        </section>        <section>
+          <h3>Step #3: Ask Questions!</h3>
+          <img data-src="images/inference_wisconsin.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h3>Step #3: Ask Questions!</h3>
+          <img data-src="images/Wisconsin_ConditionalPGraph.png" class='plain' height=400/>
+        </section>
+        <section>
+          <h3>Step #3: Ask Questions!</h3>
+          <img data-src="images/approx_inference.png" class='plain' height=200/>
+        </section>
+      </section>
+
+      <section data-background-image='Images/'>
+        <section>
+          <h4>Step #4: Create Full-size Network</h4>
+          <img data-src="images/final_dag.png" class='plain' height=550/>
+        </section>
+        <section>
+          <p>Random data results in poor edge strength =(</p>
+          <img data-src="images/final_dag_strength.png" class='plain' height=350/>
+        </section>
+        <section>
+          <p>Q: How does the probability of Radiation Therapy change for high stage, poor health individuals based on Lymph Node Capsule invasion?</p>
+          <img data-src="images/final_inference.png" class='plain' height=350/>
+        </section>
+      </section>
+
+
+      <!-- Discussion (compare/contrast) -->
+
+      <section>
+        <h5>Discussion</h5>
+        <p><br/>
+        <ul>
+          <li>Exact vs Probabilistic</li>
+          <li>Data vs Knowledge</li>
+          <li>Adaptable</li>
+          <li>Temporal</li>
+        </ul>
+        <aside class="notes">
+          • Make
+          • These
+          • Points
+        </aside>
+      </section>
+
+      <!-- Conclusion -->
+
+      <section>
+        <h3>Conclusion</h3>
+        <p><br/>
+        <h5 style="text-shadow: none;">Bayesian Networks 🤘🏼</h5>
+        <p>
+        <h3 style="text-shadow: none;">&gt;</h3>
+        <h5 style="text-shadow: none;">Description Logic 🙅</h5>
+        <aside class="notes">
+          • Much more widely used
+          • Probably because models without uncertaintly are overly simplistic
+          • Points
+        </aside>
+      </section>
+
+      <!-- Q&A -->
+
+      <section data-background="http://www.everyeye.it/public/articoli/31082016/Gene-Wilder-e-la-formula-della-comicit-con-una-candela-SPECIALE.jpg">
+        <h1 style="color: white; text-shadow: 2px 2px #000000;">Questions?</h1>
+      </section>
+
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script type="text/javascript" src="js/reveal.js"></script>
+  <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      history: true,
+
+      width: 960,
+      height: 700,
+
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [{
+        src: 'plugin/markdown/marked.js'
+      }, {
+        src: 'plugin/markdown/markdown.js'
+      }, {
+        src: 'plugin/notes/notes.js',
+        async: true
+      }, {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        callback: function() {
+          hljs.initHighlightingOnLoad();
+        }
+      }],
+
+      // Options
+      transition: 'convex'
+    });
+  </script>
+</body>
+
+</html>
