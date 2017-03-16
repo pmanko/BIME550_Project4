@@ -222,40 +222,34 @@
         <section>
           <h3>Step #1: Learn The Structure</h3>
           <aside class="notes">
-            • We used bnlearn package in R (and related packages) for most BN work <br/>
+            • Used bnlearn package in R (and related packages) for most BN work <br/>
             • 1st step: Learn Structure<br/>
               - Used hill climbing and tabu algorithms that evaluate network score based on information theory to search through space of possible structures<br/>
-            • Quickly show results<br/>
-            • We focused our subsequent analysis on the last two<br/>
+            • ::Quickly show resulting graphs::<br/>
+            • Focused our subsequent analysis on the last two - structures were simple and made sense<br/>
           </aside>
         </section>
         <section>
-          <h3>Step #1: Learn The Structure</h3>
           <h5>BCSC Risk Dataset</h5>
           <img data-src="images/risk_dag.png" class='plain' height=400/>
         </section>
         <section>
-          <h3>Step #1: Learn The Structure</h3>
           <h5>BCSC Risk Factor Dataset</h5>
           <img data-src="images/risk_factor_dag.png" class='plain' height=400/>
         </section>
         <section>
-          <h3>Step #1: Learn The Structure</h3>
           <h5>Wisconsin Prognostic Dataset</h5>
           <img data-src="images/wpbc_dag.png" class='plain' height=400/>
         </section>
         <section>
-          <h3>Step #1: Learn The Structure</h3>
           <h5>Wisconsin Diagnostic Dataset</h5>
           <img data-src="images/wdbc_dag.png" class='plain' height=400/>
         </section>
         <section>
-          <h3>Step #1: Learn The Structure</h3>
           <h5>*Wisonsin Original Dataset*</h5>
           <img data-src="images/wisconsin_dag.png" class='plain' height=400/>
         </section>
         <section>
-          <h3>Step #1: Learn The Structure</h3>
           <h5>*Ljubljana Recurrance Dataset*</h5>
           <img data-src="images/recurrance_dag.png" class='plain' height=400/>
         </section>
@@ -279,19 +273,33 @@
           <h3>Step #3: Ask Questions!</h3>
           <img data-src="images/wisconsin_inference_code.png" class='plain' height=400/>
           <aside class="notes">
-            • With the BNs built, we can provide evidence and determine how the evidece affects the probability distributions
+            • With the BNs built, we can: <br \>
+            -  provide evidence
+            -  determine how the evidece affects the probability distributions
           </aside>
-        </section>        <section>
-          <h3>Step #3: Ask Questions!</h3>
-          <img data-src="images/inference_wisconsin.png" class='plain' height=400/>
         </section>
         <section>
-          <h3>Step #3: Ask Questions!</h3>
+          <h5>Q: How does outcome change based on tumor cell clump thickness and shape irregularity?</h5>
+          <img data-src="images/inf_wis_markedup.png" class='plain' height=400/>
+          <aside class='notes'>
+            <ul>
+              <li>Monolayers (normal) vs. multilayerd (malignant)</li>
+              <li>Chance of malignance and benigness </li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          <h3>Q: How does level of tumor cell shape depend on outcome and cell size uniformity? </h3>
           <img data-src="images/Wisconsin_ConditionalPGraph.png" class='plain' height=400/>
         </section>
         <section>
-          <h3>Step #3: Ask Questions!</h3>
+          <h3>Some more questions...</h3>
           <img data-src="images/approx_inference.png" class='plain' height=200/>
+          <aside class='notes'>
+            <ul>
+              <li>Some more questions using different inference method, I wouldn't dive into it.</li>
+            </ul>
+          </aside>
         </section>
       </section>
 
@@ -299,10 +307,26 @@
         <section>
           <h4>Step #4: Create Full-size Network</h4>
           <img data-src="images/final_dag.png" class='plain' height=550/>
+          <aside class='notes'>
+            <ul>
+              <li>1. Identified all the variables we wanted to model </li>
+              <li>(NCCN, previous graphs, and DL approach)</li>
+              <li>2. Manually added arcs based on commmon sense</li>
+              <li>3. Created "random" dataset, used methods in part 2 to estimate prob. dist.</li>
+            </ul>
+          </aside>
         </section>
         <section>
           <p>Random data results in poor edge strength =(</p>
           <img data-src="images/final_dag_strength.png" class='plain' height=350/>
+          <aside class='notes'>
+            <ul>
+              <li>Random data approach was not ideal...</li>
+              <li> - should have created prob. dist directly</li>
+              <li>OR</li>
+              <li>- gotten acess do real dataset/datasets to use for estimation</li>
+            </ul>
+          </aside>
         </section>
         <section>
           <p>Q: How does the probability of Radiation Therapy change for high stage, poor health individuals based on Lymph Node Capsule invasion?</p>
