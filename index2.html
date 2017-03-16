@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/white.css">
+  <link rel="stylesheet" href="css/bime550.css">
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <title>BIME 550: Knowlege Representation</title>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title -->
+
+      <section data-background="images/title.png">
+        <h2>Breast Cancer Risks, Treatment &amp; Outcome Modeling</h2>
+        <br/><br/>
+        <h4>Description Logic &amp; Bayesian Networks</h4>
+        <br/><br/><br/>
+        <h5>Piotr Mankowski &amp; Pascal Brandt</h5>
+        <aside class="notes">
+          Use the aside tag for speaker notes.
+        </aside>
+      </section>
+
+      <!-- Breast cancer stats/important/rationale -->
+      <section>
+        <h5>Rationale</h5>
+        <img src="http://patients.ambrygen.com/bundles/agpat/img/breast_cancer/How%20common%20is%20breast%20cancer-01.png" width="80%"/>
+        <aside class="notes">
+          • Most common cancer around the world
+          • 1.1M cases diagnosed annually
+          • 410k women die each year
+        </aside>
+      </section>
+
+      <section>
+        <h5>Breast Cancer Overview</h5>
+        <ul>
+          <li>
+            Cause 💀
+            <ul style="list-style: circle">
+              <li>Cell Mutations</li>
+            </ul>
+          </li>
+          <li>
+            Treatment 💊
+            <ul style="list-style: circle">
+              <li>Surgery</li>
+              <li>Chemo</li>
+              <li>Endocrine</li>
+              <li>Radiation</li>
+            </ul>
+          </li>
+        </ul>
+        <aside class="notes">
+          • Cancer is caused by an accumulation of mutations in the cells that cause them to proliferate, de-differentation and begin invading other parts of the body
+          • Usually surgery, where the first decision comes in, sometimes preop systemtime, then followup
+        </aside>
+      </section>
+
+      <!-- Decision Trees -->
+
+      <section>
+        <h5>Decision Tree</h5>
+        <img src="images/binv-2.png" width="80%" />
+        <aside class="notes">
+          • Shows the decision following a lumpectomy<br/>
+          • based on side of tumor in axillary (armpit) lymph node<br/>
+          • deciding on type of radiation, whole or partial<br/>
+          • example of simultaneous recommendation
+        </aside>
+      </section>
+
+      <section>
+        <h5>Decision Tree</h5>
+        <img src="images/binv-4.png" width="80%" />
+      </section>
+
+      <section>
+        <h5>Decision Tree</h5>
+        <img src="images/binv-6.png" width="80%" />
+      </section>
+
+      <section>
+        <h5>Simplified Surgery Factors</h5>
+        <br/>
+        <img style="border: 0px; box-shadow: none;" src="images/surgery-factors.svg" width="80%" />
+      </section>
+
+      <!-- Description logic stuff -->
+
+      <section>
+        <h5>Multiple Surgery Recommendations</h5>
+
+        Lumpectomy
+        <pre><code data-trim>
+          hasPreopTherapyResponse some
+            (CompletePreopResponse or PartialPreopReponse)
+          hasStage some
+            (Stage0 or StageIA or StageIB or StageIIA or StageIIB)
+        </code></pre>
+
+        Mastectomy
+        <pre><code data-trim>
+        hasPreopTherapyResponse some
+            (ConfirmedProgressivePreopResponse or PartialPreopReponse)
+        hasStage some
+            (StageIIA or StageIIB or StageIIIB or StageIIIC or StageIV)
+        </code></pre>
+      </section>
+
+      <section>
+        <h5>Simplified Postop Factors</h5>
+        <br/>
+        <img style="border: 0px; box-shadow: none;" src="images/therapy-factors.svg" width="80%" />
+      </section>
+
+      <section>
+        <h5>Treatments</h5>
+
+        <pre><code data-trim>
+      		Chemotherapy
+      			ChemotherapyFollowedByEndocrineTherapy
+      			StandaloneChemotherapy
+      		EndocrineTherapy
+      			EndocrineTherapyFollowedByChemotherapy
+      		NoAdjuvantTherapy
+      		RadiationTherapy
+      			APBIRadiationTherapy
+      			RegionalRadiationTherapy
+      			WholeBreastRadiationTherapy
+        </code></pre>
+        <aside class="notes">
+          Not the heuristic for modeling the temporal dimension.
+        </aside>
+      </section>
+
+      <!-- Bayesian network stuff -->
+
+      <section>
+        <h5>Bayesian Network</h5>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Thomas_Bayes.gif" style="float: right"/>
+        <ul>
+          <li>Bayes yo</li>
+          <li>...</li>
+        </ul>
+      </section>
+
+      <!-- Discussion (compare/contrast) -->
+
+      <section>
+        <h5>Discussion</h5>
+        <ul>
+          <li>Exact vs Probabilistic</li>
+          <li>Data vs Knowledge</li>
+          <li>Adaptable</li>
+          <li>Temporal</li>
+        </ul>
+        <aside class="notes">
+          • Make
+          • These
+          • Points
+        </aside>
+      </section>
+
+      <!-- Conclusion -->
+
+      <section>
+        <h5>Conclusion</h5>
+        <ul>
+          <li>Bayesnets rule, DLs drool</li>
+        </ul>
+        <aside class="notes">
+          • Make
+          • These
+          • Points
+        </aside>
+      </section>
+
+      <!-- Q&A -->
+
+      <section data-background="http://www.everyeye.it/public/articoli/31082016/Gene-Wilder-e-la-formula-della-comicit-con-una-candela-SPECIALE.jpg">
+        <h1 style="color: white; text-shadow: 2px 2px #000000;">Questions?</h1>
+      </section>
+
+    </div>
+  </div>
+  <script src="lib/js/head.min.js"></script>
+  <script type="text/javascript" src="js/reveal.js"></script>
+  <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      history: true,
+
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [{
+        src: 'plugin/markdown/marked.js'
+      }, {
+        src: 'plugin/markdown/markdown.js'
+      }, {
+        src: 'plugin/notes/notes.js',
+        async: true
+      }, {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        callback: function() {
+          hljs.initHighlightingOnLoad();
+        }
+      }],
+
+      // Options
+      transition: 'convex'
+    });
+  </script>
+</body>
+
+</html>
