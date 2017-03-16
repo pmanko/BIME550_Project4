@@ -31,19 +31,139 @@
       </section>
 
       <!-- Breast cancer stats/important/rationale -->
-      <section>
-        <h5>Rationale</h5>
-        <aside class="notes">
-          I'm not sure if we need a slide on this.
-        </aside>
-      </section>
+<section>
+  <h5>Rationale</h5>
+  <img src="http://patients.ambrygen.com/bundles/agpat/img/breast_cancer/How%20common%20is%20breast%20cancer-01.png" width="80%"/>
+  <aside class="notes">
+    • Most common cancer around the world<br/>
+    • 1.1M cases diagnosed annually<br/>
+    • 410k women die each year
+  </aside>
+</section>
 
-      <section>
-        <h5>Breast Cancer Overview</h5>
-        <aside class="notes">
-          Talk about treatments maybe?
-        </aside>
-      </section>
+<section>
+  <h5>Breast Cancer Overview</h5>
+  <ul>
+    <li>
+      Cause 💀
+      <ul style="list-style: circle">
+        <li>Cell Mutations</li>
+      </ul>
+    </li>
+    <li>
+      Treatment 💊
+      <ul style="list-style: circle">
+        <li>Surgery</li>
+        <li>Chemo</li>
+        <li>Endocrine</li>
+        <li>Radiation</li>
+      </ul>
+    </li>
+  </ul>
+  <aside class="notes">
+    • Cancer is caused by an accumulation of mutations in the cells that cause them to proliferate, de-differentation and begin invading other parts of the body</br>
+    • Usually surgery, where the first decision comes in, sometimes preop systemtime, then followup<br/>
+  </aside>
+</section>
+
+<!-- Decision Trees -->
+
+<section>
+  <section>
+    <h5>Decision Tree</h5>
+    <img src="images/binv-2.png" width="80%" />
+    <aside class="notes">
+      • Shows the decision following a lumpectomy<br/>
+      • based on side of tumor in axillary (armpit) lymph node<br/>
+      • deciding on type of radiation, whole or partial<br/>
+      • example of simultaneous recommendation
+    </aside>
+  </section>
+
+  <section>
+    <h5>Decision Tree</h5>
+    <img src="images/binv-4.png" width="80%" />
+    <aside class="notes">
+      • Test Notes 2
+    </aside>
+  </section>
+
+  <section>
+    <h5>Decision Tree</h5>
+    <img src="images/binv-6.png" width="80%" />
+    <aside class="notes">
+      • Test Notes 3
+    </aside>
+  </section>
+</section>
+
+<section>
+  <h5>Description Logic</h5>
+  <ul>
+    <li>
+      Competancy Questions
+      <ul style="list-style: circle">
+        <li>Surgery Type</li>
+        <li>Postop Therapy</li>
+      </ul>
+    </li>
+  <ul>
+</section>
+
+<section>
+  <h5>Simplified Surgery Factors</h5>
+  <br/>
+  <img style="border: 0px; box-shadow: none;" src="images/surgery-factors.svg" width="80%" />
+</section>
+
+<!-- Description logic stuff -->
+
+<section>
+  <h5>Multiple Surgery Recommendations</h5>
+
+  Lumpectomy
+  <pre><code data-trim>
+    hasPreopTherapyResponse some
+      (CompletePreopResponse or PartialPreopReponse)
+    hasStage some
+      (Stage0 or StageIA or StageIB or StageIIA or StageIIB)
+  </code></pre>
+
+  Mastectomy
+  <pre><code data-trim>
+  hasPreopTherapyResponse some
+      (ConfirmedProgressivePreopResponse or PartialPreopReponse)
+  hasStage some
+      (StageIIA or StageIIB or StageIIIB or StageIIIC or StageIV)
+  </code></pre>
+</section>
+
+<section>
+  <h5>Simplified Postop Factors</h5>
+  <br/>
+  <img style="border: 0px; box-shadow: none;" src="images/therapy-factors.svg" width="80%" />
+</section>
+
+<section>
+  <h5>Treatments</h5>
+
+  <pre><code data-trim>
+    Chemotherapy
+      ChemotherapyFollowedByEndocrineTherapy
+      StandaloneChemotherapy
+    EndocrineTherapy
+      EndocrineTherapyFollowedByChemotherapy
+    NoAdjuvantTherapy
+    RadiationTherapy
+      APBIRadiationTherapy
+      RegionalRadiationTherapy
+      WholeBreastRadiationTherapy
+  </code></pre>
+  <aside class="notes">
+    Not the heuristic for modeling the temporal dimension.
+  </aside>
+</section>
+
 
       <!-- Bayesian network stuff -->
 
@@ -195,6 +315,13 @@
 
       <section>
         <h5>Discussion</h5>
+        <p><br/>
+        <ul>
+          <li>Exact vs Probabilistic</li>
+          <li>Data vs Knowledge</li>
+          <li>Adaptable</li>
+          <li>Temporal</li>
+        </ul>
         <aside class="notes">
           • Make
           • These
@@ -205,13 +332,15 @@
       <!-- Conclusion -->
 
       <section>
-        <h5>Conclusion</h5>
-        <ul>
-          <li>Bayesnets rule, DLs drool</li>
-        </ul>
+        <h3>Conclusion</h3>
+        <p><br/>
+        <h5 style="text-shadow: none;">Bayesian Networks 🤘🏼</h5>
+        <p>
+        <h3 style="text-shadow: none;">&gt;</h3>
+        <h5 style="text-shadow: none;">Description Logic 🙅</h5>
         <aside class="notes">
-          • Make
-          • These
+          • Much more widely used
+          • Probably because models without uncertaintly are overly simplistic
           • Points
         </aside>
       </section>
