@@ -58,11 +58,11 @@
           <li>Efficient algorithms for <b>learning</b> and <b>inference</b>
         </ul>
         <aside class="notes">
-          • Bayesian Networks attempt to model some aspect of the world using graph theory and probability theory
-          • All the nodes in a connected BN are conditionally related, but the ideas of Markov Blankets and D-seperation allow for assumptions of conditional independence
-          • These assumptions reduce the amount of conditional probs that need to be calculated
-          • Bayes Nets have efficient algs for learning structure, estimating probabilites based on data, and querying --> inference
-          • We did not know much about Breast Cancer, so decided to build BNs ground-up, based on publicly available datasets.
+          • Bayesian Networks attempt to model some aspect of the world using graph theory and probability theory<br \>
+          • All the nodes in a connected BN are conditionally related, but the ideas of Markov Blankets and D-seperation allow for assumptions of conditional independence<br \>
+          • These assumptions reduce the amount of conditional probs that need to be calculated<br \>
+          • Bayes Nets have efficient algs for learning structure, estimating probabilites based on data, and querying --> inference<br \>
+          • We did not know much about Breast Cancer, so decided to build BNs ground-up, based on publicly available datasets.<br \>
 
         </aside>
       </section>
@@ -88,50 +88,57 @@
           </ul>
         </div>
         <aside class="notes">
-          • We looked for publicly-available breast cancer datasets
-          • We downloaded and analyzed six in total
-           - Four from UCI Machine Learning Repo - under 500 rows
-            * uni of wisconsin: cell histology, risk factors, and outcomes
-            * institute of oncology ljubljana: diagnostic info and recurrance
-           - Two from BCSC - very large datasets
-            * data from more than two million screening mammograms
+          • We looked for publicly-available breast cancer datasets <br \>
+          • We downloaded and analyzed six in total<br \>
+           - Four from UCI Machine Learning Repo - under 500 rows<br \>
+            * uni of wisconsin: cell histology, risk factors, and outcomes<br \>
+            * institute of oncology ljubljana: diagnostic info and recurrance<br \>
+           - Two from BCSC - very large datasets<br \>
+            * data from more than two million screening mammograms<br \>
         </aside>
       </section>
 
       <section>
-        <h3>Step #1: Learn The Structure</h3>
         <section>
+          <h3>Step #1: Learn The Structure</h3>
+          <aside class="notes">
+            • We used bnlearn package in R (and related packages) for most BN work <br/>
+            • 1st step: Learn Structure<br/>
+              - Used hill climbing and tabu algorithms that evaluate network score based on information theory to search through space of possible structures<br/>
+            • Quickly show results<br/>
+            • We focused our subsequent analysis on the last two<br/>
+          </aside>
+        </section>
+        <section>
+          <h3>Step #1: Learn The Structure</h3>
           <h5>BCSC Risk Dataset</h5>
           <img data-src="images/risk_dag.png" class='plain' height=400/>
         </section>
         <section>
+          <h3>Step #1: Learn The Structure</h3>
           <h5>BCSC Risk Factor Dataset</h5>
           <img data-src="images/risk_factor_dag.png" class='plain' height=400/>
         </section>
         <section>
+          <h3>Step #1: Learn The Structure</h3>
           <h5>Wisconsin Prognostic Dataset</h5>
           <img data-src="images/wpbc_dag.png" class='plain' height=400/>
         </section>
         <section>
+          <h3>Step #1: Learn The Structure</h3>
           <h5>Wisconsin Diagnostic Dataset</h5>
           <img data-src="images/wdbc_dag.png" class='plain' height=400/>
         </section>
         <section>
+          <h3>Step #1: Learn The Structure</h3>
           <h5>*Wisonsin Original Dataset*</h5>
           <img data-src="images/wisconsin_dag.png" class='plain' height=400/>
         </section>
         <section>
+          <h3>Step #1: Learn The Structure</h3>
           <h5>*Ljubljana Recurrance Dataset*</h5>
           <img data-src="images/recurrance_dag.png" class='plain' height=400/>
         </section>
-        <aside class="notes">
-          • We used bnlearn package in R (and related packages) for most BN work
-          • 1st step: Learn Structure
-            - Used hill climbing and tabu algorithms that evaluate network score based on information theory to search through space of possible structures
-          • Quickly show results
-          • We focused our subsequent analysis on the last two
-
-        </aside>
       </section>
 
       <section>
@@ -139,42 +146,38 @@
         <img data-src="images/conditional_prob_table.png" class='plain' height=500/>
 
         <aside class="notes">
-          • Using the structures and the datasets, we estimated the conditional probabilites
-          • bnlearn library
-          • General method:
-            - Maximum Likelihood Parameter Estimation - maximizes agreement of a given model with observed data
+          • Using the structures and the datasets, we estimated the conditional probabilites<br \>
+          • bnlearn library<br \>
+          • General method:<br \>
+            - Maximum Likelihood Parameter Estimation - maximizes agreement of a given model with observed data<br \>
 
         </aside>
       </section>
 
       <section>
-        <h3>Step #3: Ask Questions!</h3>
         <section>
-          <h5></h5>
+          <h3>Step #3: Ask Questions!</h3>
+          <img data-src="images/wisconsin_inference_code.png" class='plain' height=400/>
+          <aside class="notes">
+            • With the BNs built, we can provide evidence and determine how the evidece affects the probability distributions
+          </aside>
+        </section>        <section>
+          <h3>Step #3: Ask Questions!</h3>
           <img data-src="images/inference_wisconsin.png" class='plain' height=400/>
         </section>
         <section>
-          <h5></h5>
+          <h3>Step #3: Ask Questions!</h3>
           <img data-src="images/Wisconsin_ConditionalPGraph.png" class='plain' height=400/>
         </section>
         <section>
-          <h5></h5>
-          <img data-src="images/wisconsin_inference_code.png" class='plain' height=400/>
-        </section>
-        <section>
-          <h5></h5>
+          <h3>Step #3: Ask Questions!</h3>
           <img data-src="images/approx_inference.png" class='plain' height=200/>
         </section>
-
-        <aside class="notes">
-          • With the BNs built, we can provide evidence and determine how the evidece affects the probability distributions
-        </aside>
       </section>
 
       <section data-background-image='Images/'>
-        <h4>Step #4: Create Full-size Network</h4>
-
         <section>
+          <h4>Step #4: Create Full-size Network</h4>
           <img data-src="images/final_dag.png" class='plain' height=550/>
         </section>
         <section>
@@ -185,10 +188,6 @@
           <p>Q: How does the probability of Radiation Therapy change for high stage, poor health individuals based on Lymph Node Capsule invasion?</p>
           <img data-src="images/final_inference.png" class='plain' height=350/>
         </section>
-
-        <aside class="notes">
-          • To show how
-        </aside>
       </section>
 
 
